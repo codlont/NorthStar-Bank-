@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Payments | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .payment-header {
+      min-height: 72px;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf0;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .payment-logo {
+      text-decoration: none;
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .payment-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .payment-header a.back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .payment-main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .payment-heading {
+      margin-bottom: 28px;
+    }
+
+    .payment-heading h1 {
+      color: #153453;
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    .payment-heading p {
+      color: #758399;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .payment-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, .8fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .payment-panel {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 27px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, .03);
+    }
+
+    .payment-panel h2 {
+      color: #17395e;
+      font-size: 19px;
+      margin: 0 0 22px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-bottom: 25px;
+    }
+
+    .category-card {
+      padding: 18px 12px;
+      border: 1px solid #e2e9f1;
+      border-radius: 7px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .category-card .category-icon {
+      font-size: 27px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .category-card strong {
+      color: #294663;
+      font-size: 13px;
+    }
+
+    .payment-form label {
+      display: block;
+      color: #344b65;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 18px 0 8px;
+    }
+
+    .payment-form input,
+    .payment-form select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #dce3ec;
+      border-radius: 5px;
+      background: #f8fafc;
+      color: #30445d;
+      font-size: 14px;
+    }
+
+    .payment-form input:disabled,
+    .payment-form select:disabled {
+      cursor: not-allowed;
+      opacity: .8;
+    }
+
+    .payment-button {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      background: #c52632;
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: not-allowed;
+      opacity: .8;
+    }
+
+    .balance-box {
+      background: #f5f8fc;
+      border: 1px solid #e7edf4;
+      border-radius: 7px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .balance-box p {
+      color: #78879a;
+      font-size: 12px;
+      margin: 0 0 9px;
+    }
+
+    .balance-box strong {
+      color: #17395e;
+      font-size: 22px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 13px;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row span:first-child {
+      color: #8491a2;
+    }
+
+    .summary-row strong {
+      color: #29425e;
+      text-align: right;
+    }
+
+    .payment-note {
+      background: #f5f7fa;
+      padding: 14px;
+      border-radius: 6px;
+      color: #66758a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .payment-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 750px) {
+      .payment-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-main {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .payment-panel {
+        padding: 22px 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="payment-header">
+    <a href="index.html" class="payment-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="payment-main">
+
+    <div class="payment-heading">
+      <h1>Bill Payments</h1>
+      <p>Explore the North Star bill payment experience.</p>
+    </div>
+
+    <div class="payment-layout">
+
+      <section class="payment-panel">
+
+        <h2>Payment categories</h2>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <span class="category-icon">⚡</span>
+            <strong>Electricity</strong>
+          </div>
+
+          <div class="category-card">
+            <span class="category-icon">📺</span>
+            <strong>Television</strong>
+          </div>
+
+          <div class="category-card">
+            <span class="category-icon">🌐</span>
+            <strong>Internet</strong>
+          </div>
+
+          <div class="category-card">
+            <span class="category-icon">💧</span>
+            <strong>Water</strong>
+          </div>
+
+          <div class="category-card">
+            <span class="category-icon">📱</span>
+            <strong>Airtime</strong>
+          </div>
+
+          <div class="category-card">
+            <span class="category-icon">🎓</span>
+            <strong>Education</strong>
+          </div>
+        </div>
+
+        <h2>Payment details</h2>
+
+        <form class="payment-form">
+
+          <label for="category">Payment category</label>
+          <select id="category" disabled>
+            <option>Select payment category</option>
+            <option>Electricity</option>
+            <option>Television</option>
+            <option>Internet</option>
+            <option>Water</option>
+            <option>Airtime</option>
+            <option>Education</option>
+          </select>
+
+          <label for="provider">Service provider</label>
+          <select id="provider" disabled>
+            <option>Select service provider</option>
+          </select>
+
+          <label for="customer">Customer or reference number</label>
+          <input
+            id="customer"
+            type="text"
+            placeholder="Enter customer reference"
+            disabled
+          >
+
+          <label for="amount">Payment amount (₦)</label>
+          <input
+            id="amount"
+            type="number"
+            placeholder="0.00"
+            disabled
+          >
+
+          <button class="payment-button" type="button" disabled>
+            Review Payment
+          </button>
+
+        </form>
+
+        <div class="payment-note">
+          This payment page is a visual prototype. It does not connect
+          to service providers, process payments, or issue bills.
+          Do not enter real customer or payment details.
+        </div>
+
+      </section>
+
+      <aside class="payment-panel">
+
+        <h2>Payment overview</h2>
+
+        <div class="balance-box">
+          <p>Sample checking balance</p>
+          <strong>₦5,250,000.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Account</span>
+          <strong>Checking</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Account ending</span>
+          <strong>•••• 4821</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Currency</span>
+          <strong>NGN</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Profile</span>
+          <strong>Sample profile</strong>
+        </div>
+
+        <div class="payment-note">
+          A real payment service would require secure authorization,
+          verified payment providers and a properly configured payment
+          processing system.
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="payment-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
