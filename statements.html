@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Statements | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #24364b;
+      font-family: Arial, sans-serif;
+    }
+
+    .statement-header {
+      background: #fff;
+      min-height: 72px;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5eaf0;
+    }
+
+    .brand {
+      color: #15385d;
+      font-weight: 800;
+      font-size: 20px;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .statement-container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .page-heading {
+      margin-bottom: 28px;
+    }
+
+    .page-heading h1 {
+      color: #153453;
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .page-heading p {
+      color: #7b8797;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .account-summary {
+      background: #173b61;
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .account-summary small {
+      color: #c8d7e6;
+      font-size: 12px;
+    }
+
+    .account-summary h2 {
+      font-size: 27px;
+      margin: 12px 0;
+    }
+
+    .account-summary p {
+      color: #d5e0eb;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .statement-panel {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .statement-panel h2 {
+      color: #183a5e;
+      font-size: 19px;
+      margin: 0 0 20px;
+    }
+
+    .statement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .statement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 17px;
+      border: 1px solid #e9edf2;
+      border-radius: 7px;
+    }
+
+    .statement-item h3 {
+      color: #29435e;
+      font-size: 14px;
+      margin: 0 0 6px;
+    }
+
+    .statement-item p {
+      color: #8a96a5;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .statement-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .statement-actions button {
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 14px;
+      background: #173e68;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .statement-actions button.secondary {
+      background: #edf2f7;
+      color: #31516f;
+    }
+
+    .statement-actions button:hover {
+      opacity: .88;
+    }
+
+    .statement-note {
+      color: #7e8998;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 23px;
+    }
+
+    .statement-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    @media(max-width: 650px) {
+      .statement-container {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      .page-heading h1 {
+        font-size: 25px;
+      }
+
+      .statement-panel {
+        padding: 17px;
+      }
+
+      .statement-item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .statement-actions {
+        width: 100%;
+      }
+
+      .statement-actions button {
+        flex: 1;
+      }
+    }
+
+    @media print {
+      .statement-header,
+      .statement-actions,
+      .statement-footer {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .statement-container {
+        margin: 0;
+        max-width: none;
+      }
+
+      .statement-panel,
+      .account-summary {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="statement-header">
+    <a href="index.html" class="brand">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="statement-container">
+
+    <section class="page-heading">
+      <h1>Account Statements</h1>
+      <p>
+        Review your account statement history and access monthly
+        statement summaries.
+      </p>
+    </section>
+
+    <section class="account-summary">
+      <small>EVERYDAY CHECKING · SAMPLE ACCOUNT</small>
+      <h2>₦5,250,000.00</h2>
+      <p>Account ending in 4821</p>
+    </section>
+
+    <section class="statement-panel">
+      <h2>Available statements</h2>
+
+      <div class="statement-list">
+
+        <article class="statement-item">
+          <div>
+            <h3>November 2026 Statement</h3>
+            <p>November 1 – November 30, 2026 · Sample summary</p>
+          </div>
+
+          <div class="statement-actions">
+            <button onclick="viewStatement('November 2026')">View</button>
+            <button class="secondary" onclick="printStatement('November 2026')">Print</button>
+          </div>
+        </article>
+
+        <article class="statement-item">
+          <div>
+            <h3>October 2026 Statement</h3>
+            <p>October 1 – October 31, 2026 · Sample summary</p>
+          </div>
+
+          <div class="statement-actions">
+            <button onclick="viewStatement('October 2026')">View</button>
+            <button class="secondary" onclick="printStatement('October 2026')">Print</button>
+          </div>
+        </article>
+
+        <article class="statement-item">
+          <div>
+            <h3>September 2026 Statement</h3>
+            <p>September 1 – September 30, 2026 · Sample summary</p>
+          </div>
+
+          <div class="statement-actions">
+            <button onclick="viewStatement('September 2026')">View</button>
+            <button class="secondary" onclick="printStatement('September 2026')">Print</button>
+          </div>
+        </article>
+
+        <article class="statement-item">
+          <div>
+            <h3>August 2026 Statement</h3>
+            <p>August 1 – August 31, 2026 · Sample summary</p>
+          </div>
+
+          <div class="statement-actions">
+            <button onclick="viewStatement('August 2026')">View</button>
+            <button class="secondary" onclick="printStatement('August 2026')">Print</button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="statement-note">
+        These statement entries contain fictional sample information.
+        They are not official bank statements or evidence of actual
+        financial activity.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="statement-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+  <script>
+    function viewStatement(month) {
+      alert(
+        month +
+        " statement selected. This fictional concept does not contain official account records."
+      );
+    }
+
+    function printStatement(month) {
+      alert(
+        "The " + month +
+        " sample statement is not an official financial document."
+      );
+    }
+  </script>
+
+</body>
+</html>
