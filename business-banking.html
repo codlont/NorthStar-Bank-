@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Business Banking | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #24364b;
+      font-family: Arial, sans-serif;
+    }
+
+    .business-header {
+      min-height: 72px;
+      background: white;
+      padding: 0 5%;
+      border-bottom: 1px solid #e5eaf0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      color: #15385d;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .back-link {
+      color: #244767;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .business-hero {
+      background: linear-gradient(120deg, #102b49, #245780);
+      padding: 75px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .business-hero small {
+      color: #cbd9e8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .business-hero h1 {
+      font-size: 39px;
+      margin: 16px 0;
+    }
+
+    .business-hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #d8e4ef;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .business-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      color: #173b60;
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .section-heading p {
+      color: #7b8797;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .business-card {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 25px;
+    }
+
+    .business-icon {
+      width: 43px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf0f7;
+      color: #214d78;
+      border-radius: 8px;
+      font-size: 21px;
+      margin-bottom: 17px;
+    }
+
+    .business-card h3 {
+      color: #294967;
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .business-card p {
+      color: #8190a1;
+      font-size: 12px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .account-types {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    .account-types h2 {
+      color: #173b60;
+      font-size: 22px;
+      margin: 0 0 18px;
+    }
+
+    .account-row {
+      padding: 18px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .account-row:last-child {
+      border-bottom: 0;
+    }
+
+    .account-row h3 {
+      color: #31516f;
+      font-size: 14px;
+      margin: 0 0 7px;
+    }
+
+    .account-row p {
+      color: #8793a2;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .business-cta {
+      background: #173b60;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      padding: 35px 22px;
+      margin-top: 28px;
+    }
+
+    .business-cta h2 {
+      font-size: 23px;
+      margin: 0 0 12px;
+    }
+
+    .business-cta p {
+      color: #d2deeb;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .business-cta a {
+      display: inline-block;
+      background: white;
+      color: #173b60;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .business-note {
+      color: #7e8998;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 22px;
+    }
+
+    .business-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    @media(max-width: 750px) {
+      .business-hero {
+        padding: 55px 18px;
+      }
+
+      .business-hero h1 {
+        font-size: 30px;
+      }
+
+      .business-container {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      .business-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .account-types {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="business-header">
+    <a href="index.html" class="brand">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="index.html" class="back-link">← Home</a>
+  </header>
+
+  <section class="business-hero">
+    <small>BUSINESS BANKING CONCEPT</small>
+
+    <h1>Supporting Your Business Journey</h1>
+
+    <p>
+      Explore a proposed business banking experience designed
+      around organisation, financial visibility and the changing
+      needs of growing businesses.
+    </p>
+  </section>
+
+  <main class="business-container">
+
+    <section class="section-heading">
+      <h2>Business services</h2>
+      <p>
+        Explore the types of features a modern business banking
+        platform could provide.
+      </p>
+    </section>
+
+    <section class="business-grid">
+
+      <article class="business-card">
+        <div class="business-icon">▣</div>
+        <h3>Business Accounts</h3>
+        <p>
+          A proposed account management experience for businesses
+          that need organised financial records.
+        </p>
+      </article>
+
+      <article class="business-card">
+        <div class="business-icon">↗</div>
+        <h3>Payment Management</h3>
+        <p>
+          Conceptual tools for viewing and organising business
+          payment activity.
+        </p>
+      </article>
+
+      <article class="business-card">
+        <div class="business-icon">▤</div>
+        <h3>Financial Reporting</h3>
+        <p>
+          Proposed financial summaries and reporting interfaces
+          for business owners.
+        </p>
+      </article>
+
+      <article class="business-card">
+        <div class="business-icon">◷</div>
+        <h3>Cash Flow Overview</h3>
+        <p>
+          A visual approach to understanding incoming and
+          outgoing business funds.
+        </p>
+      </article>
+
+      <article class="business-card">
+        <div class="business-icon">♧</div>
+        <h3>Team Management</h3>
+        <p>
+          Proposed account access and role-management features
+          for business teams.
+        </p>
+      </article>
+
+      <article class="business-card">
+        <div class="business-icon">◇</div>
+        <h3>Business Support</h3>
+        <p>
+          A central place to explore business support and
+          general information.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="account-types">
+      <h2>Business account concepts</h2>
+
+      <div class="account-row">
+        <h3>Small Business Account</h3>
+        <p>
+          A proposed account experience for independent businesses
+          and smaller organisations.
+        </p>
+      </div>
+
+      <div class="account-row">
+        <h3>Business Growth Account</h3>
+        <p>
+          A proposed financial management experience for businesses
+          expanding their operations.
+        </p>
+      </div>
+
+      <div class="account-row">
+        <h3>Corporate Account</h3>
+        <p>
+          A proposed account interface for larger organisations
+          with more complex financial management needs.
+        </p>
+      </div>
+    </section>
+
+    <section class="business-cta">
+      <h2>Explore North Star</h2>
+
+      <p>
+        Visit the contact page to explore the general enquiry
+        experience included in this website concept.
+      </p>
+
+      <a href="contact.html">Contact Us</a>
+    </section>
+
+    <p class="business-note">
+      North Star Bank is a fictional website concept. The business
+      accounts and services described here are proposed interface
+      ideas, not available financial products.
+    </p>
+
+  </main>
+
+  <footer class="business-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
