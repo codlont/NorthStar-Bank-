@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Wealth Management | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #24364b;
+      font-family: Arial, sans-serif;
+    }
+
+    .wealth-header {
+      min-height: 72px;
+      background: white;
+      padding: 0 5%;
+      border-bottom: 1px solid #e5eaf0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      color: #15385d;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .back-link {
+      color: #244767;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .wealth-hero {
+      background: linear-gradient(120deg, #102b49, #245780);
+      padding: 75px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .wealth-hero small {
+      color: #cbd9e8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .wealth-hero h1 {
+      font-size: 39px;
+      margin: 16px 0;
+    }
+
+    .wealth-hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #d8e4ef;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .wealth-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      color: #173b60;
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .section-heading p {
+      color: #7b8797;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .wealth-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .wealth-card {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 25px;
+    }
+
+    .wealth-icon {
+      width: 43px;
+      height: 43px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #eaf0f7;
+      color: #214d78;
+      border-radius: 8px;
+      font-size: 21px;
+      margin-bottom: 17px;
+    }
+
+    .wealth-card h3 {
+      color: #294967;
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .wealth-card p {
+      color: #8190a1;
+      font-size: 12px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .planning-panel {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    .planning-panel h2 {
+      color: #173b60;
+      font-size: 22px;
+      margin: 0 0 18px;
+    }
+
+    .planning-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .planning-item:last-child {
+      border-bottom: 0;
+    }
+
+    .planning-item h3 {
+      color: #31516f;
+      font-size: 14px;
+      margin: 0 0 7px;
+    }
+
+    .planning-item p {
+      color: #8793a2;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .wealth-cta {
+      background: #173b60;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      padding: 35px 22px;
+      margin-top: 28px;
+    }
+
+    .wealth-cta h2 {
+      font-size: 23px;
+      margin: 0 0 12px;
+    }
+
+    .wealth-cta p {
+      color: #d2deeb;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .wealth-cta a {
+      display: inline-block;
+      background: white;
+      color: #173b60;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .wealth-note {
+      color: #7e8998;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 22px;
+    }
+
+    .wealth-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    @media(max-width: 750px) {
+      .wealth-hero {
+        padding: 55px 18px;
+      }
+
+      .wealth-hero h1 {
+        font-size: 30px;
+      }
+
+      .wealth-container {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      .wealth-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .planning-panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="wealth-header">
+    <a href="index.html" class="brand">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="index.html" class="back-link">← Home</a>
+  </header>
+
+  <section class="wealth-hero">
+    <small>WEALTH MANAGEMENT CONCEPT</small>
+
+    <h1>Plan Today. Build Tomorrow.</h1>
+
+    <p>
+      Explore a proposed financial planning experience focused on
+      long-term goals, savings organisation and investment education.
+    </p>
+  </section>
+
+  <main class="wealth-container">
+
+    <section class="section-heading">
+      <h2>Explore financial planning</h2>
+      <p>
+        Discover the types of digital tools that could help people
+        organise their financial goals.
+      </p>
+    </section>
+
+    <section class="wealth-grid">
+
+      <article class="wealth-card">
+        <div class="wealth-icon">◎</div>
+        <h3>Financial Planning</h3>
+        <p>
+          Conceptual tools for organising financial priorities
+          and setting long-term objectives.
+        </p>
+      </article>
+
+      <article class="wealth-card">
+        <div class="wealth-icon">↗</div>
+        <h3>Investment Education</h3>
+        <p>
+          Educational information about investment concepts,
+          risk and potential returns.
+        </p>
+      </article>
+
+      <article class="wealth-card">
+        <div class="wealth-icon">◇</div>
+        <h3>Savings Goals</h3>
+        <p>
+          A proposed way to organise savings targets and
+          monitor progress toward personal goals.
+        </p>
+      </article>
+
+      <article class="wealth-card">
+        <div class="wealth-icon">▤</div>
+        <h3>Portfolio Overview</h3>
+        <p>
+          A conceptual dashboard for displaying investment
+          categories and sample portfolio information.
+        </p>
+      </article>
+
+      <article class="wealth-card">
+        <div class="wealth-icon">◷</div>
+        <h3>Retirement Planning</h3>
+        <p>
+          Educational planning concepts for thinking about
+          future financial needs.
+        </p>
+      </article>
+
+      <article class="wealth-card">
+        <div class="wealth-icon">⌂</div>
+        <h3>Financial Goals</h3>
+        <p>
+          Organise goals such as education, home ownership
+          and long-term financial security.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="planning-panel">
+      <h2>Our planning approach</h2>
+
+      <div class="planning-item">
+        <h3>1. Define your goals</h3>
+        <p>
+          Identify the financial objectives that matter most
+          and organise them by priority.
+        </p>
+      </div>
+
+      <div class="planning-item">
+        <h3>2. Understand your options</h3>
+        <p>
+          Learn about savings, investments, diversification
+          and the risks associated with financial decisions.
+        </p>
+      </div>
+
+      <div class="planning-item">
+        <h3>3. Review your progress</h3>
+        <p>
+          Periodically review financial goals and adjust plans
+          as circumstances change.
+        </p>
+      </div>
+    </section>
+
+    <section class="wealth-cta">
+      <h2>Need more information?</h2>
+
+      <p>
+        Visit our contact page to explore the general enquiry
+        experience included in this website concept.
+      </p>
+
+      <a href="contact.html">Contact Us</a>
+    </section>
+
+    <p class="wealth-note">
+      North Star Bank is a fictional website concept. No investment,
+      savings, wealth management or financial advisory services
+      are offered. Investment information can involve risk, including
+      the possible loss of capital.
+    </p>
+
+  </main>
+
+  <footer class="wealth-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
