@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Credit Cards | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .cards-header {
+      min-height: 72px;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf0;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cards-logo {
+      text-decoration: none;
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .cards-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .cards-header a.back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cards-main {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .cards-heading {
+      margin-bottom: 30px;
+    }
+
+    .cards-heading h1 {
+      color: #153453;
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    .cards-heading p {
+      color: #758399;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+      max-width: 650px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card-product {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, .03);
+    }
+
+    .bank-card {
+      height: 190px;
+      border-radius: 13px;
+      padding: 23px;
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .bank-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      right: -60px;
+      top: -90px;
+      box-shadow: 0 0 0 20px rgba(255,255,255,.04),
+                  0 0 0 45px rgba(255,255,255,.03);
+    }
+
+    .card-platinum {
+      background: linear-gradient(135deg, #182638, #53677c);
+    }
+
+    .card-gold {
+      background: linear-gradient(135deg, #75511b, #c49a43);
+    }
+
+    .card-silver {
+      background: linear-gradient(135deg, #606d7c, #b7c2ce);
+    }
+
+    .card-rewards {
+      background: linear-gradient(135deg, #102c4c, #28618e);
+    }
+
+    .bank-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bank-card-brand {
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 1.4px;
+    }
+
+    .bank-card-star {
+      font-size: 23px;
+    }
+
+    .card-chip {
+      width: 39px;
+      height: 29px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #c4b38a, #eee0b7);
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bank-card-number {
+      font-size: 16px;
+      letter-spacing: 3px;
+      position: relative;
+      z-index: 1;
+      margin-top: 13px;
+    }
+
+    .bank-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      position: relative;
+      z-index: 1;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .bank-card-bottom strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    .card-product h2 {
+      color: #17395e;
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+
+    .card-product p {
+      color: #77869a;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefit-list li {
+      color: #40566f;
+      font-size: 13px;
+      padding: 9px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .benefit-list li::before {
+      content: "✓";
+      color: #198653;
+      font-weight: 700;
+      margin-right: 9px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: #edf3f9;
+      color: #315a80;
+      padding: 7px 11px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-top: 18px;
+    }
+
+    .card-information {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 25px;
+      margin-top: 28px;
+    }
+
+    .card-information h2 {
+      color: #17395e;
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    .card-information p {
+      color: #758399;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .sample-note {
+      color: #7d8998;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 22px;
+    }
+
+    .cards-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 750px) {
+      .cards-main {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-product {
+        padding: 18px;
+      }
+
+      .bank-card {
+        height: 175px;
+        padding: 19px;
+      }
+
+      .cards-heading h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="cards-header">
+    <a href="index.html" class="cards-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="cards-main">
+
+    <section class="cards-heading">
+      <h1>North Star Credit Cards</h1>
+      <p>
+        Discover a collection of card designs created around convenience,
+        flexibility and everyday financial experiences.
+      </p>
+    </section>
+
+    <section class="cards-grid">
+
+      <article class="card-product">
+
+        <div class="bank-card card-platinum">
+          <div class="bank-card-top">
+            <span class="bank-card-brand">NORTH STAR</span>
+            <span class="bank-card-star">✦</span>
+          </div>
+
+          <div>
+            <div class="card-chip"></div>
+            <div class="bank-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 4821</div>
+          </div>
+
+          <div class="bank-card-bottom">
+            <div>
+              CARDHOLDER
+              <strong>ALEX MORGAN</strong>
+            </div>
+            <div>
+              CARD TYPE
+              <strong>PLATINUM</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2>Platinum Rewards</h2>
+        <p>
+          A premium card concept with a refined design and a selection
+          of proposed lifestyle benefits.
+        </p>
+
+        <ul class="benefit-list">
+          <li>Premium card design</li>
+          <li>Proposed travel benefits</li>
+          <li>Proposed rewards programme</li>
+        </ul>
+
+        <span class="card-tag">Premium concept</span>
+
+      </article>
+
+      <article class="card-product">
+
+        <div class="bank-card card-gold">
+          <div class="bank-card-top">
+            <span class="bank-card-brand">NORTH STAR</span>
+            <span class="bank-card-star">✦</span>
+          </div>
+
+          <div>
+            <div class="card-chip"></div>
+            <div class="bank-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 1936</div>
+          </div>
+
+          <div class="bank-card-bottom">
+            <div>
+              CARDHOLDER
+              <strong>ALEX MORGAN</strong>
+            </div>
+            <div>
+              CARD TYPE
+              <strong>GOLD</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2>Gold Signature</h2>
+        <p>
+          A warm gold design concept intended for customers who prefer
+          a distinctive card appearance.
+        </p>
+
+        <ul class="benefit-list">
+          <li>Distinctive gold finish</li>
+          <li>Proposed shopping rewards</li>
+          <li>Proposed lifestyle privileges</li>
+        </ul>
+
+        <span class="card-tag">Signature concept</span>
+
+      </article>
+
+      <article class="card-product">
+
+        <div class="bank-card card-silver">
+          <div class="bank-card-top">
+            <span class="bank-card-brand">NORTH STAR</span>
+            <span class="bank-card-star">✦</span>
+          </div>
+
+          <div>
+            <div class="card-chip"></div>
+            <div class="bank-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2750</div>
+          </div>
+
+          <div class="bank-card-bottom">
+            <div>
+              CARDHOLDER
+              <strong>ALEX MORGAN</strong>
+            </div>
+            <div>
+              CARD TYPE
+              <strong>SILVER</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2>Silver Classic</h2>
+        <p>
+          A clean and understated card concept designed around
+          everyday banking convenience.
+        </p>
+
+        <ul class="benefit-list">
+          <li>Simple modern appearance</li>
+          <li>Proposed everyday benefits</li>
+          <li>Proposed account management tools</li>
+        </ul>
+
+        <span class="card-tag">Classic concept</span>
+
+      </article>
+
+      <article class="card-product">
+
+        <div class="bank-card card-rewards">
+          <div class="bank-card-top">
+            <span class="bank-card-brand">NORTH STAR</span>
+            <span class="bank-card-star">✦</span>
+          </div>
+
+          <div>
+            <div class="card-chip"></div>
+            <div class="bank-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 6382</div>
+          </div>
+
+          <div class="bank-card-bottom">
+            <div>
+              CARDHOLDER
+              <strong>ALEX MORGAN</strong>
+            </div>
+            <div>
+              CARD TYPE
+              <strong>REWARDS</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2>Cash Rewards</h2>
+        <p>
+          A modern card concept built around a proposed rewards
+          experience for everyday purchases.
+        </p>
+
+        <ul class="benefit-list">
+          <li>Modern blue design</li>
+          <li>Proposed purchase rewards</li>
+          <li>Proposed spending insights</li>
+        </ul>
+
+        <span class="card-tag">Rewards concept</span>
+
+      </article>
+
+    </section>
+
+    <section class="card-information">
+      <h2>Card information</h2>
+      <p>
+        These are fictional card designs for the North Star Bank website
+        concept. No cards are issued, no credit is offered, and no rewards
+        or financial benefits are currently available.
+      </p>
+    </section>
+
+    <p class="sample-note">
+      All card numbers, cardholder names and designs are fictional
+      sample information. These are not valid payment cards.
+    </p>
+
+  </main>
+
+  <footer class="cards-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
