@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Security | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .security-hero {
+      background: linear-gradient(120deg, #071b3a, #123d70);
+      color: white;
+      padding: 75px 7%;
+    }
+    .security-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      max-width: 750px;
+      margin: 12px 0;
+    }
+    .security-hero p {
+      max-width: 650px;
+      line-height: 1.8;
+      color: #e1eaf5;
+    }
+    .security-content {
+      max-width: 1150px;
+      margin: auto;
+      padding: 55px 6%;
+    }
+    .security-intro {
+      max-width: 780px;
+      line-height: 1.8;
+      color: #596579;
+      margin-bottom: 35px;
+    }
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .security-card {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(15, 35, 65, .05);
+    }
+    .security-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: #eaf1fa;
+      color: #123d70;
+      border-radius: 10px;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .security-card h3 {
+      color: #102b50;
+      margin: 0 0 10px;
+    }
+    .security-card p,
+    .security-card li {
+      color: #596579;
+      line-height: 1.7;
+    }
+    .security-card ul {
+      padding-left: 20px;
+    }
+    .security-warning {
+      margin-top: 35px;
+      padding: 25px;
+      background: #fff6f2;
+      border-left: 4px solid #bd3038;
+      border-radius: 8px;
+    }
+    .security-warning h2 {
+      color: #84232a;
+      margin-top: 0;
+    }
+    .security-warning p {
+      color: #60464a;
+      line-height: 1.7;
+    }
+    .security-contact {
+      margin-top: 35px;
+      padding: 35px;
+      background: #f0f4f9;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .security-contact h2 {
+      color: #102b50;
+    }
+    .security-contact p {
+      color: #596579;
+      line-height: 1.7;
+    }
+    .security-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 24px;
+      background: #bd3038;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    .security-note {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f7f8fa;
+      border-radius: 8px;
+      color: #697386;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+      .security-hero {
+        padding: 55px 6%;
+      }
+      .security-content {
+        padding: 40px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">✦ NORTH STAR BANK</a>
+      <a href="index.html" class="online-btn">HOME</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="security-hero">
+      <p>YOUR SECURITY MATTERS</p>
+      <h1>Protecting what matters most.</h1>
+      <p>
+        Learn practical ways to protect your personal information,
+        recognize suspicious activity, and browse financial services more safely.
+      </p>
+    </section>
+
+    <section class="security-content">
+      <h2>Stay safer online</h2>
+      <p class="security-intro">
+        Good security habits help reduce the risk of identity theft,
+        account compromise, and online fraud. These guidelines are useful
+        whenever you use websites, mobile applications, or financial services.
+      </p>
+
+      <div class="security-grid">
+
+        <article class="security-card">
+          <div class="security-icon">🔐</div>
+          <h3>Use strong passwords</h3>
+          <p>Protect your online accounts with unique passwords that are difficult to guess.</p>
+          <ul>
+            <li>Use a different password for every important account.</li>
+            <li>Choose long passwords or passphrases.</li>
+            <li>Consider using a trusted password manager.</li>
+            <li>Never share your password with another person.</li>
+          </ul>
+        </article>
+
+        <article class="security-card">
+          <div class="security-icon">🎣</div>
+          <h3>Recognize phishing attempts</h3>
+          <p>Fraudsters may pretend to represent a bank, company, or government agency.</p>
+          <ul>
+            <li>Be cautious of unexpected messages and urgent requests.</li>
+            <li>Check website addresses before opening links.</li>
+            <li>Do not download suspicious attachments.</li>
+            <li>Never disclose passwords or verification codes through messages.</li>
+          </ul>
+        </article>
+
+        <article class="security-card">
+          <div class="security-icon">📱</div>
+          <h3>Secure your devices</h3>
+          <p>Your phone and computer should be protected against unauthorized access.</p>
+          <ul>
+            <li>Install operating system and application updates.</li>
+            <li>Use a screen lock or biometric protection.</li>
+            <li>Avoid financial activity on unfamiliar public devices.</li>
+            <li>Only install applications from trusted sources.</li>
+          </ul>
+        </article>
+
+        <article class="security-card">
+          <div class="security-icon">👁️</div>
+          <h3>Monitor account activity</h3>
+          <p>Review your financial activity regularly through your actual financial institution.</p>
+          <ul>
+            <li>Review transactions and account notifications.</li>
+            <li>Look out for unfamiliar payments or withdrawals.</li>
+            <li>Contact your financial institution using verified contact details.</li>
+            <li>Report suspicious activity promptly.</li>
+          </ul>
+        </article>
+
+        <article class="security-card">
+          <div class="security-icon">🌐</div>
+          <h3>Browse carefully</h3>
+          <p>Make sure you are visiting the correct website before sharing information.</p>
+          <ul>
+            <li>Type website addresses carefully.</li>
+            <li>Look for HTTPS, but remember it does not prove a website is trustworthy.</li>
+            <li>Avoid links from unknown senders.</li>
+            <li>Do not use financial services through suspicious websites.</li>
+          </ul>
+        </article>
+
+        <article class="security-card">
+          <div class="security-icon">🛡️</div>
+          <h3>Protect personal information</h3>
+          <p>Keep sensitive information private and share it only when necessary.</p>
+          <ul>
+            <li>Do not publish identity documents online.</li>
+            <li>Keep verification codes private.</li>
+            <li>Be careful about information shared on social media.</li>
+            <li>Shred or securely dispose of documents containing personal details.</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="security-warning">
+        <h2>What to do if you suspect fraud</h2>
+        <p>
+          If you believe your real financial account has been compromised,
+          contact the financial institution through its verified official
+          website or telephone number. Ask it to secure your account and
+          follow its instructions. If money has been lost, report the incident
+          to the appropriate authorities.
+        </p>
+        <p>
+          Do not rely on telephone numbers or links sent by someone who
+          contacted you unexpectedly.
+        </p>
+      </div>
+
+      <div class="security-contact">
+        <h2>Need help with this website?</h2>
+        <p>
+          Contact the North Star Bank website team for questions about this
+          website concept.
+        </p>
+        <a href="contact.html" class="security-button">Contact Us</a>
+      </div>
+
+      <div class="security-note">
+        <strong>Website concept notice:</strong> North Star Bank is a fictional
+        website concept. This page provides general security information only.
+        It does not represent an operating financial institution, provide
+        account protection services, or receive fraud reports. Never enter
+        real banking credentials or financial information on this website.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      © 2026 North Star Bank. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
