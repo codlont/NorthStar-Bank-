@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>My Dashboard | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .dash-header {
+      background: #fff;
+      min-height: 75px;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5eaf0;
+    }
+
+    .dash-logo {
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .dash-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .dash-header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .dash-header-right a {
+      text-decoration: none;
+      color: #30465f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dash-user {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #e5edf7;
+      color: #173e69;
+      font-weight: 700;
+    }
+
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 235px 1fr;
+      min-height: calc(100vh - 75px);
+    }
+
+    .dash-sidebar {
+      background: #102c4c;
+      padding: 30px 18px;
+    }
+
+    .dash-sidebar h3 {
+      color: #9db4ce;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 0 13px;
+      margin: 0 0 18px;
+    }
+
+    .dash-sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 13px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #dce7f3;
+      font-size: 14px;
+    }
+
+    .dash-sidebar a:hover,
+    .dash-sidebar a.active {
+      background: #23486e;
+      color: #fff;
+    }
+
+    .dash-sidebar .nav-icon {
+      width: 20px;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .dash-main {
+      padding: 35px 4%;
+      min-width: 0;
+    }
+
+    .dash-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 28px;
+    }
+
+    .dash-heading h1 {
+      margin: 0 0 8px;
+      font-size: 29px;
+      color: #153453;
+    }
+
+    .dash-heading p {
+      margin: 0;
+      color: #758399;
+      font-size: 14px;
+    }
+
+    .date-label {
+      color: #68788e;
+      font-size: 13px;
+    }
+
+    .balance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .balance-card {
+      background: #fff;
+      padding: 23px;
+      border: 1px solid #e7ebf1;
+      border-radius: 9px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, 0.03);
+    }
+
+    .balance-card p {
+      margin: 0 0 13px;
+      color: #758399;
+      font-size: 13px;
+    }
+
+    .balance-card h2 {
+      color: #17395e;
+      font-size: 25px;
+      margin: 0 0 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .balance-card small {
+      color: #8491a2;
+      font-size: 12px;
+    }
+
+    .dashboard-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+      gap: 20px;
+    }
+
+    .dash-panel {
+      background: #fff;
+      border: 1px solid #e7ebf1;
+      border-radius: 9px;
+      padding: 24px;
+      margin-bottom: 20px;
+      min-width: 0;
+    }
+
+    .panel-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      color: #183a5d;
+    }
+
+    .panel-heading a {
+      color: #1b568c;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .transaction {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .transaction:last-child {
+      border-bottom: none;
+    }
+
+    .transaction-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .transaction-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #edf2f8;
+      display: grid;
+      place-items: center;
+      color: #1a4a7b;
+      font-size: 18px;
+    }
+
+    .transaction-info strong {
+      display: block;
+      font-size: 13px;
+      color: #29425e;
+      margin-bottom: 5px;
+    }
+
+    .transaction-info small {
+      color: #8a96a5;
+      font-size: 11px;
+    }
+
+    .transaction-amount {
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .positive {
+      color: #198653;
+    }
+
+    .negative {
+      color: #bd3b42;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .quick-action {
+      display: block;
+      text-align: center;
+      padding: 18px 10px;
+      border: 1px solid #e3e9f0;
+      border-radius: 7px;
+      text-decoration: none;
+      color: #244767;
+      background: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .quick-action span {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 9px;
+    }
+
+    .quick-action:hover {
+      background: #f2f6fb;
+    }
+
+    .bank-card {
+      min-height: 175px;
+      border-radius: 12px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, #142d4e, #28618e);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bank-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .bank-card-number {
+      font-size: 17px;
+      letter-spacing: 3px;
+      margin-top: 20px;
+    }
+
+    .bank-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .bank-card-bottom strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+    }
+
+    .sample-note {
+      color: #7d8998;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 17px;
+    }
+
+    .dash-footer {
+      text-align: center;
+      padding: 20px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 950px) {
+      .balance-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dashboard-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-sidebar {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 5px;
+      }
+
+      .dash-sidebar h3 {
+        display: none;
+      }
+
+      .dash-sidebar a {
+        white-space: nowrap;
+        margin: 0;
+        padding: 12px;
+      }
+
+      .dash-main {
+        padding: 24px 15px;
+      }
+
+      .dash-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .balance-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-header {
+        padding: 0 15px;
+      }
+
+      .dash-logo {
+        font-size: 16px;
+      }
+
+      .dash-header-right {
+        gap: 10px;
+      }
+
+      .dash-header-right a {
+        font-size: 12px;
+      }
+
+      .dash-panel {
+        padding: 18px 14px;
+      }
+
+      .transaction-amount {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="dash-header">
+    <a href="index.html" class="dash-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <div class="dash-header-right">
+      <a href="contact.html">Support</a>
+      <div class="dash-user">NS</div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+
+    <aside class="dash-sidebar">
+      <h3>My Banking</h3>
+
+      <a href="dashboard.html" class="active">
+        <span class="nav-icon">▦</span> Overview
+      </a>
+
+      <a href="accounts.html">
+        <span class="nav-icon">▣</span> My Accounts
+      </a>
+
+      <a href="transfers.html">
+        <span class="nav-icon">↗</span> Transfers
+      </a>
+
+      <a href="payments.html">
+        <span class="nav-icon">⇄</span> Payments
+      </a>
+
+      <a href="transactions.html">
+        <span class="nav-icon">↔</span> Transactions
+      </a>
+
+      <a href="credit-cards.html">
+        <span class="nav-icon">▤</span> Credit Cards
+      </a>
+
+      <a href="statements.html">
+        <span class="nav-icon">▧</span> Statements
+      </a>
+
+      <a href="profile.html">
+        <span class="nav-icon">♙</span> My Profile
+      </a>
+
+      <a href="index.html">
+        <span class="nav-icon">←</span> Back to Website
+      </a>
+    </aside>
+
+    <main class="dash-main">
+
+      <div class="dash-heading">
+        <div>
+          <h1>Good morning, Alex</h1>
+          <p>Welcome to your North Star banking overview.</p>
+        </div>
+
+        <div class="date-label">Account overview</div>
+      </div>
+
+      <section class="balance-grid">
+
+        <div class="balance-card">
+          <p>Total account balance</p>
+          <h2>₦8,450,000.00</h2>
+          <small>Across sample accounts</small>
+        </div>
+
+        <div class="balance-card">
+          <p>Everyday checking</p>
+          <h2>₦5,250,000.00</h2>
+          <small>Sample account ending 4821</small>
+        </div>
+
+        <div class="balance-card">
+          <p>Personal savings</p>
+          <h2>₦3,200,000.00</h2>
+          <small>Sample account ending 1936</small>
+        </div>
+
+      </section>
+
+      <div class="dashboard-columns">
+
+        <div>
+
+          <section class="dash-panel">
+            <div class="panel-heading">
+              <h2>Recent transactions</h2>
+              <a href="transactions.html">View all</a>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-left">
+                <div class="transaction-icon">↗</div>
+                <div class="transaction-info">
+                  <strong>Online purchase</strong>
+                  <small>November 4 · Sample transaction</small>
+                </div>
+              </div>
+              <div class="transaction-amount negative">−₦45,000</div>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-left">
+                <div class="transaction-icon">↓</div>
+                <div class="transaction-info">
+                  <strong>Salary payment</strong>
+                  <small>November 3 · Sample transaction</small>
+                </div>
+              </div>
+              <div class="transaction-amount positive">+₦750,000</div>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-left">
+                <div class="transaction-icon">↗</div>
+                <div class="transaction-info">
+                  <strong>Utility payment</strong>
+                  <small>November 2 · Sample transaction</small>
+                </div>
+              </div>
+              <div class="transaction-amount negative">−₦28,500</div>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-left">
+                <div class="transaction-icon">↓</div>
+                <div class="transaction-info">
+                  <strong>Transfer received</strong>
+                  <small>November 1 · Sample transaction</small>
+                </div>
+              </div>
+              <div class="transaction-amount positive">+₦120,000</div>
+            </div>
+          </section>
+
+          <section class="dash-panel">
+            <div class="panel-heading">
+              <h2>Quick actions</h2>
+            </div>
+
+            <div class="quick-actions">
+              <a href="transfers.html" class="quick-action">
+                <span>↗</span>Transfer
+              </a>
+
+              <a href="payments.html" class="quick-action">
+                <span>⇄</span>Pay bills
+              </a>
+
+              <a href="accounts.html" class="quick-action">
+                <span>▣</span>Accounts
+              </a>
+
+              <a href="statements.html" class="quick-action">
+                <span>▤</span>Statements
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+        <div>
+
+          <section class="dash-panel">
+            <div class="panel-heading">
+              <h2>My card</h2>
+              <a href="credit-cards.html">Manage</a>
+            </div>
+
+            <div class="bank-card">
+              <div class="bank-card-top">
+                <strong>NORTH STAR</strong>
+                <span>✦</span>
+              </div>
+
+              <div class="bank-card-number">
+                •••• &nbsp; •••• &nbsp; •••• &nbsp; 4821
+              </div>
+
+              <div class="bank-card-bottom">
+                <div>
+                  CARDHOLDER
+                  <strong>ALEX MORGAN</strong>
+                </div>
+
+                <div>
+                  EXPIRES
+                  <strong>08/29</strong>
+                </div>
+              </div>
+            </div>
+
+            <p class="sample-note">
+              Fictional card design and sample details only.
+              This is not a payment card.
+            </p>
+          </section>
+
+          <section class="dash-panel">
+            <div class="panel-heading">
+              <h2>Account information</h2>
+            </div>
+
+            <p style="font-size:13px;color:#718096;">Account holder</p>
+            <strong>Alex Morgan</strong>
+
+            <p style="font-size:13px;color:#718096;margin-top:20px;">Customer reference</p>
+            <strong>NSB-0004821</strong>
+
+            <p style="font-size:13px;color:#718096;margin-top:20px;">Account status</p>
+            <strong style="color:#198653;">Sample profile</strong>
+          </section>
+
+        </div>
+
+      </div>
+
+      <p class="sample-note">
+        This is a fictional banking website concept. All names, balances,
+        account references, cards and transactions displayed here are
+        sample data, not real financial records.
+      </p>
+
+    </main>
+
+  </div>
+
+  <footer class="dash-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
