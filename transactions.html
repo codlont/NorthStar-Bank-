@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Transactions | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .transaction-header {
+      min-height: 72px;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf0;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .transaction-logo {
+      text-decoration: none;
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .transaction-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .transaction-header a.back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .transaction-main {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .transaction-heading {
+      margin-bottom: 28px;
+    }
+
+    .transaction-heading h1 {
+      color: #153453;
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    .transaction-heading p {
+      color: #758399;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .transaction-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+      margin-bottom: 25px;
+    }
+
+    .summary-card {
+      background: #fff;
+      border: 1px solid #e5eaf0;
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .summary-card p {
+      color: #78879a;
+      font-size: 13px;
+      margin: 0 0 12px;
+    }
+
+    .summary-card h2 {
+      color: #17395e;
+      font-size: 23px;
+      margin: 0;
+    }
+
+    .transaction-panel {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 25px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, .03);
+    }
+
+    .panel-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .panel-heading h2 {
+      color: #17395e;
+      font-size: 19px;
+      margin: 0;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) 190px 190px;
+      gap: 12px;
+      margin-bottom: 23px;
+    }
+
+    .filters input,
+    .filters select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid #dce3ec;
+      border-radius: 5px;
+      background: #fff;
+      color: #30445d;
+      font-size: 13px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .transaction-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+      text-align: left;
+    }
+
+    .transaction-table th {
+      color: #8290a1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      padding: 14px 12px;
+      background: #f7f9fc;
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .transaction-table td {
+      padding: 17px 12px;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 13px;
+      color: #344b65;
+    }
+
+    .transaction-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .transaction-name {
+      font-weight: 700;
+      color: #29425e;
+    }
+
+    .transaction-date {
+      color: #8793a2;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .transaction-type {
+      display: inline-block;
+      padding: 6px 9px;
+      background: #edf3f9;
+      border-radius: 20px;
+      color: #315a80;
+      font-size: 11px;
+    }
+
+    .amount-credit {
+      color: #198653 !important;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .amount-debit {
+      color: #bd3b42 !important;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status {
+      color: #198653;
+      background: #eaf6ef;
+      padding: 6px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+
+    .no-results {
+      display: none;
+      padding: 30px;
+      text-align: center;
+      color: #8793a2;
+      font-size: 14px;
+    }
+
+    .sample-note {
+      color: #7d8998;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 22px;
+    }
+
+    .transaction-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 750px) {
+      .transaction-main {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .transaction-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+      .transaction-panel {
+        padding: 19px 13px;
+      }
+
+      .panel-heading {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="transaction-header">
+    <a href="index.html" class="transaction-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="transaction-main">
+
+    <div class="transaction-heading">
+      <h1>Transaction History</h1>
+      <p>Review and search your sample account activity.</p>
+    </div>
+
+    <section class="transaction-summary">
+
+      <div class="summary-card">
+        <p>Sample opening balance</p>
+        <h2>₦4,653,500</h2>
+      </div>
+
+      <div class="summary-card">
+        <p>Sample money received</p>
+        <h2>₦870,000</h2>
+      </div>
+
+      <div class="summary-card">
+        <p>Sample money spent</p>
+        <h2>₦73,500</h2>
+      </div>
+
+    </section>
+
+    <section class="transaction-panel">
+
+      <div class="panel-heading">
+        <h2>All transactions</h2>
+      </div>
+
+      <div class="filters">
+
+        <input
+          type="search"
+          id="searchTransactions"
+          placeholder="Search transactions..."
+          aria-label="Search transactions"
+        >
+
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+          <option value="income">Money received</option>
+          <option value="expense">Money spent</option>
+        </select>
+
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="all">All statuses</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+
+      </div>
+
+      <div class="table-wrap">
+
+        <table class="transaction-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody id="transactionRows">
+
+            <tr data-category="expense" data-status="completed">
+              <td>
+                <div class="transaction-name">Online purchase</div>
+                <div class="transaction-date">Retail shopping</div>
+              </td>
+              <td><span class="transaction-type">Shopping</span></td>
+              <td>Nov 4, 2026</td>
+              <td class="amount-debit">−₦45,000</td>
+              <td><span class="status">Completed</span></td>
+            </tr>
+
+            <tr data-category="income" data-status="completed">
+              <td>
+                <div class="transaction-name">Salary payment</div>
+                <div class="transaction-date">Monthly income</div>
+              </td>
+              <td><span class="transaction-type">Income</span></td>
+              <td>Nov 3, 2026</td>
+              <td class="amount-credit">+₦750,000</td>
+              <td><span class="status">Completed</span></td>
+            </tr>
+
+            <tr data-category="expense" data-status="completed">
+              <td>
+                <div class="transaction-name">Utility payment</div>
+                <div class="transaction-date">Household bills</div>
+              </td>
+              <td><span class="transaction-type">Bills</span></td>
+              <td>Nov 2, 2026</td>
+              <td class="amount-debit">−₦28,500</td>
+              <td><span class="status">Completed</span></td>
+            </tr>
+
+            <tr data-category="income" data-status="completed">
+              <td>
+                <div class="transaction-name">Transfer received</div>
+                <div class="transaction-date">Incoming transfer</div>
+              </td>
+              <td><span class="transaction-type">Transfer</span></td>
+              <td>Nov 1, 2026</td>
+              <td class="amount-credit">+₦120,000</td>
+              <td><span class="status">Completed</span></td>
+            </tr>
+
+            <tr data-category="expense" data-status="pending">
+              <td>
+                <div class="transaction-name">Internet subscription</div>
+                <div class="transaction-date">Monthly subscription</div>
+              </td>
+              <td><span class="transaction-type">Bills</span></td>
+              <td>Oct 30, 2026</td>
+              <td class="amount-debit">−₦15,000</td>
+              <td><span class="status">Pending</span></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="no-results" id="noResults">
+          No matching transactions found.
+        </div>
+
+      </div>
+
+      <p class="sample-note">
+        All transaction descriptions, dates, amounts and statuses shown
+        are fictional sample data. They are not real banking records.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer class="transaction-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("searchTransactions");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const rows = document.querySelectorAll("#transactionRows tr");
+    const noResults = document.getElementById("noResults");
+
+    function filterTransactions() {
+      const search = searchInput.value.toLowerCase().trim();
+      const category = categoryFilter.value;
+      const status = statusFilter.value;
+      let visibleCount = 0;
+
+      rows.forEach(function(row) {
+        const matchesSearch = row.textContent.toLowerCase().includes(search);
+        const matchesCategory =
+          category === "all" || row.dataset.category === category;
+        const matchesStatus =
+          status === "all" || row.dataset.status === status;
+
+        const show =
+          matchesSearch && matchesCategory && matchesStatus;
+
+        row.style.display = show ? "" : "none";
+
+        if (show) visibleCount++;
+      });
+
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", filterTransactions);
+    categoryFilter.addEventListener("change", filterTransactions);
+    statusFilter.addEventListener("change", filterTransactions);
+  </script>
+
+</body>
+</html>
