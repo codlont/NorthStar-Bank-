@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Online Banking | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #f3f5f8;
+      color: #172b45;
+    }
+
+    .login-header {
+      background: #fff;
+      padding: 20px 6%;
+      border-bottom: 1px solid #e5e9ef;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .login-header a {
+      color: #17365d;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .login-layout {
+      min-height: 75vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 55px auto;
+      padding: 0 22px;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .login-welcome h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #102b4e;
+    }
+
+    .login-welcome p {
+      color: #65758a;
+      line-height: 1.8;
+      font-size: 16px;
+      max-width: 440px;
+    }
+
+    .login-benefits {
+      margin-top: 30px;
+      display: grid;
+      gap: 17px;
+    }
+
+    .login-benefit {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #30445d;
+    }
+
+    .benefit-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: #e4edf8;
+      border-radius: 50%;
+      color: #174b83;
+      font-size: 19px;
+    }
+
+    .login-card {
+      background: #fff;
+      padding: 38px;
+      border-radius: 12px;
+      box-shadow: 0 12px 45px rgba(15, 35, 60, 0.09);
+      border: 1px solid #e8edf3;
+    }
+
+    .login-card h2 {
+      color: #122e50;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .login-card > p {
+      color: #718096;
+      margin-bottom: 28px;
+      font-size: 14px;
+    }
+
+    .login-card label {
+      display: block;
+      margin: 18px 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #33465e;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d7dee8;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f7f9fc;
+    }
+
+    .login-card input:disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .login-submit {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      border: 0;
+      border-radius: 5px;
+      background: #c52632;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .login-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      font-size: 13px;
+    }
+
+    .login-links a {
+      color: #174b83;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .prototype-note {
+      margin-top: 22px;
+      padding: 12px;
+      background: #f5f7fa;
+      border-radius: 5px;
+      color: #66758a;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .login-footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #7b8797;
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .login-layout {
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+        gap: 30px;
+      }
+
+      .login-welcome {
+        text-align: center;
+      }
+
+      .login-welcome p {
+        margin: auto;
+      }
+
+      .login-benefits {
+        text-align: left;
+        max-width: 360px;
+        margin: 25px auto 0;
+      }
+
+      .login-card {
+        padding: 27px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="login-header">
+    <a href="index.html" class="logo">
+      <span>✦</span> NORTH STAR BANK
+    </a>
+
+    <a href="index.html">← Back to Home</a>
+  </header>
+
+  <main class="login-layout">
+
+    <section class="login-welcome">
+      <h1>Banking made simple. Wherever you are.</h1>
+
+      <p>
+        Explore the North Star online banking experience.
+        A convenient concept for viewing account information
+        and managing everyday banking activities.
+      </p>
+
+      <div class="login-benefits">
+
+        <div class="login-benefit">
+          <span class="benefit-icon">⌂</span>
+          <span>View your account overview</span>
+        </div>
+
+        <div class="login-benefit">
+          <span class="benefit-icon">↗</span>
+          <span>Explore payment and transfer features</span>
+        </div>
+
+        <div class="login-benefit">
+          <span class="benefit-icon">▣</span>
+          <span>Review cards and transactions</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="login-card">
+      <h2>Welcome back</h2>
+      <p>Sign in to explore the online banking portal.</p>
+
+      <form>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          disabled
+        >
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          disabled
+        >
+
+        <button class="login-submit" type="button" disabled>
+          Sign In
+        </button>
+      </form>
+
+      <div class="login-links">
+        <a href="contact.html">Need help?</a>
+        <a href="index.html">Return to homepage</a>
+      </div>
+
+      <div class="prototype-note">
+        North Star Bank is a fictional website concept. This sign-in
+        screen is a non-functional preview. Do not enter real banking
+        credentials or financial information.
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="login-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
