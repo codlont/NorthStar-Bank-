@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Contact Us | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #24364b;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-header {
+      min-height: 72px;
+      background: white;
+      border-bottom: 1px solid #e5eaf0;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #15385d;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .back-link {
+      color: #244767;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-heading {
+      margin-bottom: 30px;
+    }
+
+    .contact-heading h1 {
+      color: #153453;
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    .contact-heading p {
+      color: #7b8797;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.4fr;
+      gap: 23px;
+      align-items: start;
+    }
+
+    .contact-info,
+    .contact-form,
+    .faq-section {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .contact-info h2,
+    .contact-form h2,
+    .faq-section h2 {
+      color: #183a5e;
+      font-size: 19px;
+      margin: 0 0 20px;
+    }
+
+    .info-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .info-item:last-child {
+      border-bottom: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #31516f;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .info-item p {
+      color: #8793a2;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact-form label {
+      display: block;
+      color: #40566f;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid #dce4ed;
+      border-radius: 6px;
+      background: white;
+      color: #304963;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: #315f8d;
+    }
+
+    .contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: #173e68;
+      color: white;
+      border: 0;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #24547f;
+    }
+
+    .faq-section {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      color: #304963;
+      font-size: 14px;
+      margin: 0 0 8px;
+    }
+
+    .faq-item p {
+      color: #8793a2;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact-note {
+      color: #7e8998;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 22px;
+    }
+
+    .contact-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    @media(max-width: 750px) {
+      .contact-container {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-heading h1 {
+        font-size: 27px;
+      }
+
+      .contact-info,
+      .contact-form,
+      .faq-section {
+        padding: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="contact-header">
+    <a href="index.html" class="brand">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="contact-container">
+
+    <section class="contact-heading">
+      <h1>How can we help?</h1>
+      <p>
+        Find information about customer support, website assistance
+        and general enquiries.
+      </p>
+    </section>
+
+    <div class="contact-grid">
+
+      <section class="contact-info">
+        <h2>Contact information</h2>
+
+        <div class="info-item">
+          <strong>Customer support</strong>
+          <p>For general questions and website assistance.</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Email</strong>
+          <p>support@example.com</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Support hours</strong>
+          <p>Monday – Friday<br>9:00 AM – 5:00 PM</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Online assistance</strong>
+          <p>Use the contact form to prepare a general enquiry.</p>
+        </div>
+      </section>
+
+      <section class="contact-form">
+        <h2>Send us a message</h2>
+
+        <form id="contactForm">
+
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name"
+              placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email"
+              placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Enquiry category</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a category</option>
+              <option>General enquiry</option>
+              <option>Website assistance</option>
+              <option>Technical support</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message"
+              placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit">Prepare email</button>
+
+        </form>
+
+        <p class="contact-note">
+          Do not enter passwords, PINs, card numbers, account credentials
+          or other sensitive financial information.
+        </p>
+      </section>
+
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>How can I get help with the website?</h3>
+        <p>Use the contact form above to prepare a general website enquiry.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I access the website on my phone?</h3>
+        <p>Yes. The website layout is designed to adapt to mobile screens.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I make real bank transfers here?</h3>
+        <p>No. This is a fictional website concept and does not provide banking or payment services.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I report a website problem?</h3>
+        <p>Select Technical support in the contact form and describe the issue.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contact-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      const body =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Category: " + subject + "\n\n" +
+        "Message:\n" + message;
+
+      const mailto =
+        "mailto:support@example.com" +
+        "?subject=" + encodeURIComponent("North Star enquiry: " + subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  </script>
+
+</body>
+</html>
