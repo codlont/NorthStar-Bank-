@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>My Profile | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #24364b;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-header {
+      min-height: 72px;
+      padding: 0 5%;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      color: #15385d;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .profile-container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .page-heading {
+      margin-bottom: 25px;
+    }
+
+    .page-heading h1 {
+      color: #153453;
+      font-size: 30px;
+      margin: 0 0 9px;
+    }
+
+    .page-heading p {
+      color: #7b8797;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .profile-sidebar,
+    .profile-content {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .profile-avatar {
+      width: 76px;
+      height: 76px;
+      background: #173e68;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .profile-sidebar h2 {
+      color: #193a5c;
+      font-size: 19px;
+      margin: 0 0 7px;
+    }
+
+    .profile-sidebar p {
+      color: #8793a2;
+      font-size: 12px;
+      margin: 0 0 18px;
+    }
+
+    .profile-status {
+      display: inline-block;
+      background: #eaf5ee;
+      color: #247347;
+      padding: 7px 11px;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+
+    .profile-menu {
+      border-top: 1px solid #edf0f4;
+      margin-top: 22px;
+      padding-top: 15px;
+    }
+
+    .profile-menu a {
+      display: block;
+      text-decoration: none;
+      color: #4c6178;
+      font-size: 13px;
+      padding: 12px 0;
+    }
+
+    .profile-menu a:hover {
+      color: #c52632;
+    }
+
+    .profile-section {
+      margin-bottom: 27px;
+    }
+
+    .profile-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-section h2 {
+      color: #183a5e;
+      font-size: 18px;
+      margin: 0 0 17px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .detail-item small {
+      display: block;
+      color: #8995a3;
+      font-size: 11px;
+      margin-bottom: 7px;
+    }
+
+    .detail-item strong {
+      display: block;
+      color: #304963;
+      font-size: 13px;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .security-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .security-row:last-child {
+      border-bottom: 0;
+    }
+
+    .security-row strong {
+      display: block;
+      color: #304963;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .security-row small {
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    .security-row button {
+      border: 1px solid #dce4ed;
+      background: #f5f8fb;
+      color: #31516f;
+      border-radius: 5px;
+      padding: 9px 12px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .profile-notice {
+      background: #f5f8fb;
+      color: #64768a;
+      padding: 15px;
+      border-radius: 7px;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 24px;
+    }
+
+    .profile-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8995a3;
+      font-size: 11px;
+    }
+
+    @media(max-width: 750px) {
+      .profile-container {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      .profile-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .page-heading h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="profile-header">
+    <a href="index.html" class="brand">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="profile-container">
+
+    <section class="page-heading">
+      <h1>My Profile</h1>
+      <p>View your personal information and account preferences.</p>
+    </section>
+
+    <div class="profile-layout">
+
+      <aside class="profile-sidebar">
+        <div class="profile-avatar">AM</div>
+
+        <h2>Alex Morgan</h2>
+        <p>Sample customer profile</p>
+
+        <span class="profile-status">Sample account</span>
+
+        <nav class="profile-menu">
+          <a href="#personal">Personal information</a>
+          <a href="#contact">Contact information</a>
+          <a href="#security">Security settings</a>
+          <a href="accounts.html">My accounts</a>
+          <a href="statements.html">Statements</a>
+          <a href="contact.html">Customer support</a>
+        </nav>
+      </aside>
+
+      <section class="profile-content">
+
+        <div class="profile-section" id="personal">
+          <h2>Personal information</h2>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <small>Full name</small>
+              <strong>Alex Morgan</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Customer ID</small>
+              <strong>NSB-2026-001</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Date of birth</small>
+              <strong>Sample information</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Account type</small>
+              <strong>Personal banking</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section" id="contact">
+          <h2>Contact information</h2>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <small>Email address</small>
+              <strong>alex@example.com</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Phone number</small>
+              <strong>+234 800 000 0000</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Country</small>
+              <strong>Nigeria</strong>
+            </div>
+
+            <div class="detail-item">
+              <small>Communication preference</small>
+              <strong>Email notifications</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section" id="security">
+          <h2>Security settings</h2>
+
+          <div class="security-row">
+            <div>
+              <strong>Password settings</strong>
+              <small>Password management concept</small>
+            </div>
+            <button onclick="showNotice()">Manage</button>
+          </div>
+
+          <div class="security-row">
+            <div>
+              <strong>Two-factor authentication</strong>
+              <small>Additional account protection concept</small>
+            </div>
+            <button onclick="showNotice()">Configure</button>
+          </div>
+
+          <div class="security-row">
+            <div>
+              <strong>Login activity</strong>
+              <small>Review recent sign-in activity concept</small>
+            </div>
+            <button onclick="showNotice()">View</button>
+          </div>
+        </div>
+
+        <div class="profile-notice">
+          This is a fictional website concept. All names, contact details
+          and account identifiers are sample information. Profile and
+          security controls do not change real account settings.
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="profile-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+  <script>
+    function showNotice() {
+      alert(
+        "This feature is part of the North Star Bank website concept and is not connected to a real customer account."
+      );
+    }
+  </script>
+
+</body>
+</html>
