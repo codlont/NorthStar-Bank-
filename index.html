@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>North Star Bank | Banking for a Brighter Future</title>
+
+  <meta name="description" content="Explore North Star Bank's modern banking website concept.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="header-left">
+      <button class="menu-button" onclick="toggleSidebar()" aria-label="Open menu">
+        ☰
+      </button>
+
+      <a href="index.html" class="logo">
+        <span class="logo-mark">✦</span>
+        <span>NORTH STAR BANK</span>
+      </a>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="#personal">PERSONAL</a>
+      <a href="#cards">CREDIT CARDS</a>
+      <a href="#services">SERVICES</a>
+      <a href="about.html">ABOUT US</a>
+    </nav>
+
+    <div class="header-right">
+      <button class="search-button" onclick="toggleSearch()" aria-label="Search">
+        ⌕
+      </button>
+
+      <a href="online-banking.html" class="online-button">
+        ONLINE BANKING
+      </a>
+    </div>
+
+  </header>
+
+  <!-- SEARCH -->
+
+  <div class="search-panel" id="searchPanel">
+    <input type="search" placeholder="Search North Star Bank..." aria-label="Search">
+  </div>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">✦</span>
+        <span>NORTH STAR</span>
+      </a>
+
+      <button class="sidebar-close" onclick="toggleSidebar()">×</button>
+    </div>
+
+    <a href="#personal" onclick="toggleSidebar()">Personal Banking</a>
+    <a href="#cards" onclick="toggleSidebar()">Credit Cards</a>
+    <a href="#services" onclick="toggleSidebar()">Banking Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="online-banking.html">Online Banking</a>
+
+  </aside>
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="personal">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">WELCOME TO NORTH STAR BANK</div>
+
+        <h1>Banking for a brighter future.</h1>
+
+        <p>
+          Discover a modern banking experience built around your goals,
+          your ambitions and the future you want to create.
+        </p>
+
+        <a href="#services" class="primary-button">
+          EXPLORE OUR SERVICES
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- TRUST STRIP -->
+
+    <section class="trust-strip">
+
+      <div>
+        <strong>Personal Banking</strong>
+        <span>Solutions designed around you</span>
+      </div>
+
+      <div>
+        <strong>Business Banking</strong>
+        <span>Support for your ambitions</span>
+      </div>
+
+      <div>
+        <strong>Digital Convenience</strong>
+        <span>A modern banking experience</span>
+      </div>
+
+    </section>
+
+    <!-- CREDIT CARDS -->
+
+    <section class="section" id="cards">
+
+      <div class="section-heading">
+        <h2>Find the card that fits your life</h2>
+        <p>Explore the North Star collection of credit card designs.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <a href="credit-cards.html" class="credit-card card-platinum">
+          <div>
+            <div class="card-top">
+              <span>NORTH STAR</span>
+              <span>✦</span>
+            </div>
+            <div class="card-chip"></div>
+          </div>
+
+          <div>
+            <div class="card-name">Platinum Rewards</div>
+            <div class="card-type">PLATINUM CREDIT CARD</div>
+          </div>
+        </a>
+
+        <a href="credit-cards.html" class="credit-card card-gold">
+          <div>
+            <div class="card-top">
+              <span>NORTH STAR</span>
+              <span>✦</span>
+            </div>
+            <div class="card-chip"></div>
+          </div>
+
+          <div>
+            <div class="card-name">Gold Signature</div>
+            <div class="card-type">SIGNATURE CREDIT CARD</div>
+          </div>
+        </a>
+
+        <a href="credit-cards.html" class="credit-card card-silver">
+          <div>
+            <div class="card-top">
+              <span>NORTH STAR</span>
+              <span>✦</span>
+            </div>
+            <div class="card-chip"></div>
+          </div>
+
+          <div>
+            <div class="card-name">Silver Classic</div>
+            <div class="card-type">CLASSIC CREDIT CARD</div>
+          </div>
+        </a>
+
+        <a href="credit-cards.html" class="credit-card card-cash">
+          <div>
+            <div class="card-top">
+              <span>NORTH STAR</span>
+              <span>✦</span>
+            </div>
+            <div class="card-chip"></div>
+          </div>
+
+          <div>
+            <div class="card-name">Cash Rewards</div>
+            <div class="card-type">REWARDS CREDIT CARD</div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="section-link">
+        <a href="credit-cards.html">Explore all cards →</a>
+      </div>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section class="section services" id="services">
+
+      <div class="section-heading">
+        <h2>Banking made for your world</h2>
+        <p>Explore our banking services and financial solutions.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <a href="accounts.html" class="service">
+          <div class="service-icon">🏦</div>
+          <h3>Personal Banking</h3>
+          <p>Explore everyday banking and personal financial tools.</p>
+        </a>
+
+        <a href="business-banking.html" class="service">
+          <div class="service-icon">💼</div>
+          <h3>Business Banking</h3>
+          <p>Banking solutions for businesses and entrepreneurs.</p>
+        </a>
+
+        <a href="credit-cards.html" class="service">
+          <div class="service-icon">💳</div>
+          <h3>Credit Cards</h3>
+          <p>Discover the North Star credit card collection.</p>
+        </a>
+
+        <a href="wealth-management.html" class="service">
+          <div class="service-icon">📈</div>
+          <h3>Wealth Management</h3>
+          <p>Explore financial planning and wealth strategies.</p>
+        </a>
+
+        <a href="security.html" class="service">
+          <div class="service-icon">🔒</div>
+          <h3>Digital Security</h3>
+          <p>Learn about digital security and account protection.</p>
+        </a>
+
+        <a href="online-banking.html" class="service">
+          <div class="service-icon">🌐</div>
+          <h3>Online Banking</h3>
+          <p>Visit the North Star online banking portal.</p>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- PROMOTIONAL SECTION -->
+
+    <section class="promo">
+
+      <div class="promo-content">
+        <h2>Your future deserves a brighter direction.</h2>
+
+        <p>
+          Discover a modern banking experience designed around convenience,
+          accessibility and financial possibilities.
+        </p>
+
+        <a href="about.html" class="primary-button">
+          DISCOVER NORTH STAR
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>✦ NORTH STAR BANK</h3>
+        <p>Banking for a brighter future.</p>
+      </div>
+
+      <div>
+        <h3>Banking</h3>
+        <a href="accounts.html">Personal Banking</a>
+        <a href="business-banking.html">Business Banking</a>
+        <a href="credit-cards.html">Credit Cards</a>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="online-banking.html">Online Banking</a>
+      </div>
+
+      <div>
+        <h3>Information</h3>
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 North Star Bank. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
