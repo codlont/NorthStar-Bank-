@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Banking | North Star Bank</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  color: #1d2b40;
+}
+
+header {
+  height: 85px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid #e3e7ed;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #071d49;
+}
+
+.star {
+  background: #071d49;
+  color: white;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 94%, 50% 72%,
+    21% 94%, 32% 57%, 2% 35%, 39% 35%
+  );
+}
+
+.logo h2 {
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.logo small {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+
+.header-link {
+  color: #0756a5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.notice {
+  background: #fff7e7;
+  color: #70501a;
+  text-align: center;
+  padding: 11px;
+  font-size: 12px;
+}
+
+main {
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 20px;
+}
+
+.login-layout {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  box-shadow: 0 10px 35px rgba(0,0,0,.07);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.welcome {
+  background:
+    linear-gradient(rgba(5,25,61,.92), rgba(5,25,61,.92)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome .eyebrow {
+  color: #e8bd6b;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.welcome h1 {
+  font-family: Georgia, serif;
+  font-size: 39px;
+  line-height: 1.2;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  color: #d7e0ed;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.welcome-footer {
+  margin-top: 55px;
+  font-size: 12px;
+  color: #d7e0ed;
+}
+
+.login-box {
+  padding: 55px 45px;
+}
+
+.login-box h2 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  color: #071d49;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.subtitle {
+  color: #687589;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.field-label {
+  display: block;
+  color: #25364e;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 19px 0 9px;
+}
+
+input {
+  width: 100%;
+  height: 47px;
+  padding: 0 13px;
+  border: 1px solid #cbd3df;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #0756a5;
+  box-shadow: 0 0 0 2px rgba(7,86,165,.1);
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 65px;
+}
+
+.show-password {
+  position: absolute;
+  right: 12px;
+  top: 15px;
+  border: none;
+  background: none;
+  color: #0756a5;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.demo-button {
+  width: 100%;
+  background: #c82035;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 27px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.demo-button:hover {
+  background: #a8172b;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.links a {
+  color: #0756a5;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.secure-note {
+  margin-top: 35px;
+  padding: 16px;
+  background: #f2f5f9;
+  border-left: 3px solid #0756a5;
+}
+
+.secure-note h3 {
+  font-size: 12px;
+  color: #071d49;
+  margin-bottom: 7px;
+}
+
+.secure-note p {
+  font-size: 11px;
+  color: #657287;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 11px;
+  color: #788397;
+}
+
+@media(max-width: 700px) {
+  header {
+    padding: 0 18px;
+    height: 75px;
+  }
+
+  .logo h2 {
+    font-size: 15px;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome {
+    padding: 35px 25px;
+  }
+
+  .welcome h1 {
+    font-size: 31px;
+  }
+
+  .welcome-footer {
+    margin-top: 20px;
+  }
+
+  .login-box {
+    padding: 35px 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo" style="text-decoration:none">
+    <div class="star">N</div>
+    <div>
+      <h2>NORTH STAR BANK</h2>
+      <small>YOUR FUTURE. OUR PRIORITY.</small>
+    </div>
+  </a>
+
+  <a href="index.html" class="header-link">← Back to Home</a>
+</header>
+
+<div class="notice">
+  DEMONSTRATION PORTAL — NO REAL BANKING OR ACCOUNT ACCESS IS AVAILABLE.
+</div>
+
+<main>
+
+  <div class="login-layout">
+
+    <section class="welcome">
+      <div class="eyebrow">NORTH STAR DIGITAL BANKING</div>
+
+      <h1>Your financial world, in one place.</h1>
+
+      <p>
+        Explore the North Star Bank digital banking experience.
+        Manage your financial journey through a modern banking interface.
+      </p>
+
+      <div class="welcome-footer">
+        ✦ &nbsp; Banking for a brighter future.
+      </div>
+    </section>
+
+    <section class="login-box">
+
+      <h2>Online Banking</h2>
+
+      <p class="subtitle">
+        The customer authentication service is not yet connected.
+      </p>
+
+      <label class="field-label" for="username">
+        Username (interface preview)
+      </label>
+
+      <input
+        id="username"
+        type="text"
+        placeholder="Username entry disabled"
+        disabled
+      >
+
+      <label class="field-label" for="password">
+        Password (interface preview)
+      </label>
+
+      <div class="password-wrap">
+        <input
+          id="password"
+          type="password"
+          placeholder="Password entry disabled"
+          disabled
+        >
+
+        <button class="show-password" disabled>
+          SHOW
+        </button>
+      </div>
+
+      <button class="demo-button" onclick="demoMessage()">
+        CUSTOMER LOGIN — COMING SOON
+      </button>
+
+      <div class="links">
+        <a href="#" onclick="demoMessage();return false;">Forgot username?</a>
+        <a href="#" onclick="demoMessage();return false;">Forgot password?</a>
+      </div>
+
+      <div class="secure-note">
+        <h3>✦ Security and privacy</h3>
+        <p>
+          Real customer authentication is not available in this demonstration.
+          Never enter actual banking credentials on this page.
+        </p>
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 North Star Bank — Demonstration website concept.
+</footer>
+
+<script>
+function demoMessage() {
+  alert(
+    "The North Star Bank customer portal is still under development. No account access is available."
+  );
+}
+</script>
+
+</body>
+</html>
