@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>My Accounts | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .account-header {
+      background: white;
+      min-height: 72px;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5eaf0;
+    }
+
+    .account-logo {
+      text-decoration: none;
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .account-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .account-header a.back-link {
+      text-decoration: none;
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .account-main {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .account-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 28px;
+    }
+
+    .account-heading h1 {
+      margin: 0 0 8px;
+      color: #153453;
+      font-size: 30px;
+    }
+
+    .account-heading p {
+      color: #758399;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .total-card {
+      background: linear-gradient(120deg, #102c4c, #28618e);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .total-card p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: #d3dfeb;
+    }
+
+    .total-card h2 {
+      font-size: 34px;
+      margin: 0 0 10px;
+    }
+
+    .total-card small {
+      color: #d3dfeb;
+      font-size: 12px;
+    }
+
+    .section-title {
+      color: #17395e;
+      font-size: 20px;
+      margin: 30px 0 17px;
+    }
+
+    .accounts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .account-card {
+      background: white;
+      padding: 25px;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, 0.03);
+    }
+
+    .account-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .account-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #eaf1f9;
+      color: #174b83;
+      font-size: 21px;
+    }
+
+    .account-status {
+      color: #198653;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .account-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: #203d5c;
+    }
+
+    .account-number {
+      color: #8793a2;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .account-balance-label {
+      color: #8793a2;
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    .account-balance {
+      color: #153453;
+      font-size: 25px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .account-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .account-actions a {
+      text-decoration: none;
+      border: 1px solid #dbe4ee;
+      color: #1d4d7b;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .account-actions a:hover {
+      background: #edf3f9;
+    }
+
+    .details-panel {
+      background: white;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    .details-panel h2 {
+      color: #17395e;
+      font-size: 18px;
+      margin: 0 0 20px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 13px;
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-row span:first-child {
+      color: #8190a2;
+    }
+
+    .detail-row strong {
+      color: #29425e;
+      text-align: right;
+    }
+
+    .sample-note {
+      color: #7d8998;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 25px;
+    }
+
+    .account-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 700px) {
+      .accounts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .account-main {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .account-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .total-card {
+        padding: 23px;
+      }
+
+      .total-card h2 {
+        font-size: 27px;
+      }
+
+      .account-card {
+        padding: 21px;
+      }
+
+      .detail-row {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="account-header">
+    <a href="index.html" class="account-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="account-main">
+
+    <div class="account-heading">
+      <div>
+        <h1>My Accounts</h1>
+        <p>View your account information and balances.</p>
+      </div>
+    </div>
+
+    <section class="total-card">
+      <p>Total account balance</p>
+      <h2>₦8,450,000.00</h2>
+      <small>Combined balance across sample accounts</small>
+    </section>
+
+    <h2 class="section-title">Your accounts</h2>
+
+    <section class="accounts-grid">
+
+      <article class="account-card">
+        <div class="account-card-top">
+          <div class="account-icon">▣</div>
+          <span class="account-status">Sample profile</span>
+        </div>
+
+        <h3>Everyday Checking</h3>
+        <div class="account-number">Account ending in •••• 4821</div>
+
+        <div class="account-balance-label">Available balance</div>
+        <p class="account-balance">₦5,250,000.00</p>
+
+        <div class="account-actions">
+          <a href="transactions.html">Transactions</a>
+          <a href="statements.html">Statements</a>
+        </div>
+      </article>
+
+      <article class="account-card">
+        <div class="account-card-top">
+          <div class="account-icon">▤</div>
+          <span class="account-status">Sample profile</span>
+        </div>
+
+        <h3>Personal Savings</h3>
+        <div class="account-number">Account ending in •••• 1936</div>
+
+        <div class="account-balance-label">Available balance</div>
+        <p class="account-balance">₦3,200,000.00</p>
+
+        <div class="account-actions">
+          <a href="transactions.html">Transactions</a>
+          <a href="statements.html">Statements</a>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="details-panel">
+      <h2>Account details</h2>
+
+      <div class="detail-row">
+        <span>Account holder</span>
+        <strong>Alex Morgan</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Customer reference</span>
+        <strong>NSB-0004821</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Primary account</span>
+        <strong>Everyday Checking</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Account currency</span>
+        <strong>Nigerian Naira (NGN)</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Profile status</span>
+        <strong>Sample profile</strong>
+      </div>
+    </section>
+
+    <p class="sample-note">
+      North Star Bank is a fictional website concept. All account names,
+      balances, references and details on this page are fictional sample
+      data and do not represent real accounts or financial records.
+    </p>
+
+  </main>
+
+  <footer class="account-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
