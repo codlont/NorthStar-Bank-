@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Transfers | North Star Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #20334b;
+      font-family: Arial, sans-serif;
+    }
+
+    .transfer-header {
+      min-height: 72px;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf0;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .transfer-logo {
+      text-decoration: none;
+      color: #14375e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .transfer-logo span {
+      color: #c52632;
+      margin-right: 7px;
+    }
+
+    .transfer-header a.back-link {
+      color: #244767;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .transfer-main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .transfer-heading {
+      margin-bottom: 28px;
+    }
+
+    .transfer-heading h1 {
+      margin: 0 0 8px;
+      color: #153453;
+      font-size: 30px;
+    }
+
+    .transfer-heading p {
+      margin: 0;
+      color: #758399;
+      font-size: 14px;
+    }
+
+    .transfer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.8fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .transfer-panel {
+      background: #fff;
+      border: 1px solid #e5eaf0;
+      border-radius: 9px;
+      padding: 28px;
+      box-shadow: 0 3px 12px rgba(20, 43, 70, 0.03);
+    }
+
+    .transfer-panel h2 {
+      color: #17395e;
+      font-size: 19px;
+      margin: 0 0 22px;
+    }
+
+    .transfer-form label {
+      display: block;
+      color: #344b65;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 19px 0 8px;
+    }
+
+    .transfer-form input,
+    .transfer-form select,
+    .transfer-form textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #dce3ec;
+      border-radius: 5px;
+      background: #f8fafc;
+      font-size: 14px;
+      color: #30445d;
+    }
+
+    .transfer-form input:disabled,
+    .transfer-form select:disabled,
+    .transfer-form textarea:disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .transfer-form textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+
+    .transfer-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 25px;
+      background: #c52632;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .account-summary {
+      background: #f5f8fc;
+      border: 1px solid #e7edf4;
+      padding: 20px;
+      border-radius: 7px;
+      margin-bottom: 20px;
+    }
+
+    .account-summary p {
+      color: #78879a;
+      font-size: 12px;
+      margin: 0 0 9px;
+    }
+
+    .account-summary strong {
+      display: block;
+      color: #17395e;
+      font-size: 21px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 13px;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row span:first-child {
+      color: #8491a2;
+    }
+
+    .summary-row strong {
+      color: #29425e;
+      text-align: right;
+    }
+
+    .transfer-note {
+      background: #f5f7fa;
+      padding: 14px;
+      border-radius: 6px;
+      color: #66758a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .transfer-footer {
+      text-align: center;
+      padding: 25px;
+      color: #8793a2;
+      font-size: 11px;
+    }
+
+    @media (max-width: 750px) {
+      .transfer-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .transfer-main {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .transfer-panel {
+        padding: 22px 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="transfer-header">
+    <a href="index.html" class="transfer-logo">
+      <span>✦</span>NORTH STAR BANK
+    </a>
+
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </header>
+
+  <main class="transfer-main">
+
+    <div class="transfer-heading">
+      <h1>Transfers</h1>
+      <p>Explore the North Star transfer experience.</p>
+    </div>
+
+    <div class="transfer-layout">
+
+      <section class="transfer-panel">
+        <h2>Transfer details</h2>
+
+        <form class="transfer-form">
+
+          <label for="sourceAccount">From account</label>
+          <select id="sourceAccount" disabled>
+            <option>Everyday Checking · •••• 4821</option>
+            <option>Personal Savings · •••• 1936</option>
+          </select>
+
+          <label for="destination">Transfer destination</label>
+          <select id="destination" disabled>
+            <option>Select destination</option>
+            <option>North Star Bank account</option>
+            <option>Another bank account</option>
+          </select>
+
+          <label for="recipient">Recipient name</label>
+          <input
+            id="recipient"
+            type="text"
+            placeholder="Enter recipient name"
+            disabled
+          >
+
+          <label for="bank">Recipient bank</label>
+          <input
+            id="bank"
+            type="text"
+            placeholder="Enter bank name"
+            disabled
+          >
+
+          <label for="accountNumber">Recipient account number</label>
+          <input
+            id="accountNumber"
+            type="text"
+            inputmode="numeric"
+            placeholder="Enter account number"
+            disabled
+          >
+
+          <label for="amount">Transfer amount (₦)</label>
+          <input
+            id="amount"
+            type="number"
+            placeholder="0.00"
+            disabled
+          >
+
+          <label for="description">Transfer description</label>
+          <textarea
+            id="description"
+            placeholder="Add a description"
+            disabled
+          ></textarea>
+
+          <button class="transfer-button" type="button" disabled>
+            Review Transfer
+          </button>
+
+        </form>
+
+        <div class="transfer-note">
+          This transfer interface is a visual prototype only. It does not
+          verify recipients, submit transfers, or move money. Do not enter
+          real account or payment details.
+        </div>
+      </section>
+
+      <aside class="transfer-panel">
+
+        <h2>Account summary</h2>
+
+        <div class="account-summary">
+          <p>Sample available balance</p>
+          <strong>₦5,250,000.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Account type</span>
+          <strong>Checking</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Account ending</span>
+          <strong>•••• 4821</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Currency</span>
+          <strong>NGN</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Profile</span>
+          <strong>Sample profile</strong>
+        </div>
+
+        <div class="transfer-note">
+          In a real banking service, transfers require secure authentication,
+          verified recipient information, fraud monitoring and authorized
+          payment processing.
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="transfer-footer">
+    © 2026 North Star Bank. Fictional website concept.
+  </footer>
+
+</body>
+</html>
